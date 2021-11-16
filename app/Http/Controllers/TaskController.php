@@ -2,14 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Task;
 
 class TaskController extends Controller
 {
     //TODO
     // CRUD ->
-    // CREATE -> store
-    // RETRIEVE -> LIST i SHOW
-    // UPDATE -> update
+    // CREATE -> create (formulari) -> store POST
+    // RETRIEVE -> LIST (index) i SHOW (mostra un item)
+    // UPDATE -> edit (formulari) -> update -> POST del formulari edició
     // DELETE -> destroy
+
+    public function index()
+    {
+        return view('tasks',[
+            'tasks' => Task::all()
+        ]);
+    }
 }
